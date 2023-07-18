@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            
+            async function fetchData() {
+                const ticket = {
+                    tipo: 'PRESTAMO', 
+                    folio: '123', 
+                    expedientes: [{nss: 111, nombre: 'Nombre de prueba 1'}], 
+                    matricula: '1', 
+                    nombreUsuario: 'Miguel', 
+                    fecha: new Date(),
+                    //supervisor: 'Gaby Soto'
+                    matriculaReceptor: '10',
+                    nombreReceptor: 'Montserrat'
+                }
+
+                console.log(ticket);
+
+                const data = await fetch('http://localhost:3001/imprimir', {
+                    body: JSON.stringify(ticket),
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                console.log(data);
+                const response = await data.json();
+                console.log(response);
+            }
+            fetchData();
+            
+        </script>
+    </body>
+</html>
