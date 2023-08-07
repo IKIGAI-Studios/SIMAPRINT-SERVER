@@ -12,7 +12,7 @@ class Device {
     constructor(vid = null, pid = null, device = null) {
         this.vid = vid;
         this.pid = pid;
-        this.device = null;
+        this.device = device;
         this.endpoint = null;
         this.deviceToPcEndpoint = null;
     }
