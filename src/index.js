@@ -107,7 +107,7 @@ routes.post('/imprimir', async (req, res) => {
 
         console.log(ticket);
 
-        //await simaprinter.imprimirTicket(ticket);
+        await simaprinter.imprimirTicket(ticket);
 
         return res.status(200).json('Impresión realizada con éxito');
     } 
